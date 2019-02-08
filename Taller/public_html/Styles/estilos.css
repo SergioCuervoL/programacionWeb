@@ -1,0 +1,19 @@
+div img {
+    width: 15%;
+    height: 20%;
+}
+
+.img{
+    background:#CFCECD;
+    width: 90%;
+}
+
+div p{
+    background: #1F1F1E;
+    color: #FFFEFD;
+    font-size: 20px;
+}
+
+.parrafo{
+    width: 90%;
+}
