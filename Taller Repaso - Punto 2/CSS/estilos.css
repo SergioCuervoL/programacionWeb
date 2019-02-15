@@ -1,0 +1,17 @@
+.contacto{
+	background: rgba(255,255,255, 0.9);
+	color: #169cff;
+	margin: 30px;
+	padding: 10px;
+	border: 5px solid #5dc8dd;
+	display: inline-block;
+	width: 500px;
+}
+
+input{
+	width: 100%;
+}
+
+td{
+	width: 50%	;
+}
