@@ -38,12 +38,12 @@ public class Login extends HttpServlet {
         	resp = c.identificarse(username, password, users);
         }    
         if(resp.equals("Ingreso Correctamente")) {
-        	String site = "http://localhost:8080/Ingreso/publicacion.jsp";
+        	String site = "http://localhost:9090/Ingreso/publicacion.jsp";
         	response.setContentType("text/html");
         	response.setStatus(response.SC_MOVED_TEMPORARILY);
         	response.setHeader("Location", site);
         }else {
-        	String site = "http://localhost:8080/Ingreso/";
+        	String site = "http://localhost:9090/Ingreso/";
         	response.setContentType("text/html");
         	response.setStatus(response.SC_MOVED_TEMPORARILY);
         	response.setHeader("Location", site);

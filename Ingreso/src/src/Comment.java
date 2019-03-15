@@ -4,9 +4,11 @@ public class Comment {
 	
 	public String comentario;
 	public int idComentario;
-	public Comment(String comentario, int idComentario) {
+	public int idNoticia;
+	public Comment(String comentario, int idComentario, int idNoticia) {
 		this.comentario = comentario;
 		this.idComentario = idComentario;
+		this.idNoticia = idNoticia;
 	}
 	public String getComentario() {
 		return comentario;
@@ -20,4 +22,11 @@ public class Comment {
 	public void setIdComentario(int idComentario) {
 		this.idComentario = idComentario;
 	}
+	public int getIdNoticia() {
+		return idNoticia;
+	}
+	public void setIdNoticia(int idNoticia) {
+		this.idNoticia = idNoticia;
+	}
+	
 }

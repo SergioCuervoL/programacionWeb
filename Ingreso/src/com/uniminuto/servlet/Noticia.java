@@ -43,7 +43,9 @@ public class Noticia extends HttpServlet {
                           "</head> \n" +
                           "<body> "+
                           	"<div align='center'> \n" +
+                          		"<input type=\"hidden\" id=\"custId\" name=\"custId\" value=\""+n.getIdPublicación()+"\">"+
                           		"<a href=\""+n.getUrl()+"\">"+n.getTitulo()+"</a> <br>"+
+                          		"<a href=\"http://localhost:9090/Ingreso/Comentario\">Comentario</a> <br>"+
                           		n.getFecha()+
                           	"</div>"+
                           "</body> \n" +
