@@ -17,6 +17,10 @@
     <servlet-name>Noticia</servlet-name>
     <servlet-class>com.uniminuto.servlet.Noticia</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>Comentario</servlet-name>
+    <servlet-class>com.uniminuto.servlet.Comentario</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>Ingreso</servlet-name>
     <url-pattern>/IngresoServlet1</url-pattern>

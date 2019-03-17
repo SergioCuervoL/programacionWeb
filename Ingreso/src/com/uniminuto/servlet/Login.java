@@ -24,11 +24,9 @@ public class Login extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // reading the user input 
 		ControladorUsuario c = new ControladorUsuario();
-		Usuario u = null;
 		String resp = "";
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        PrintWriter out = response.getWriter();
         ControladorUsuario controller = new ControladorUsuario();
         users = controller.agregarUsuario(username, password, users);
         if(users.size() > numUs) {

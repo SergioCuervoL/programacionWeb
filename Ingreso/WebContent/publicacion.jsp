@@ -13,6 +13,7 @@
         <form action="Noticia">
             Title:  <input type="text" name="titule" size="20px"> <br>
             URL:  <input type="text" name="url" size="20px"> <br><br>
+            <input type="hidden" id="custId" name="custId" value=null>
         <input type="submit" value="submit">
         
         </form>

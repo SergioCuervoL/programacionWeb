@@ -25,11 +25,24 @@ public class Noticia extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		News n = null;
+		Boolean res = false;
 		ControladorNoticias c = new ControladorNoticias();
 		String titule = request.getParameter("titule");
         String url = request.getParameter("url");
+        String idPublicacion = request.getParameter("custId");
         PrintWriter out = response.getWriter();
-        news = c.agregarNoticia(titule, url, news);
+        res = c.buscarNoticia(news, idPublicacion);
+    	if(res == false) {
+    		c.agregarNoticia(titule, url, news);
+    	}
+    	else {
+        	for(int i = 0; i < news.size(); i++) {
+            	n = news.get(i);
+            	if(idPublicacion.equals(n.getIdPublicación())) {
+            		n.setPuntos(n.getPuntos()+1);
+            	}
+            }
+    	}              
         for(int i = 0; i < news.size(); i++) {
         	n = news.get(i);
         	out.println(
@@ -42,17 +55,20 @@ public class Noticia extends HttpServlet {
                             "<title> Noticias Publicadas  </title> \n" +
                           "</head> \n" +
                           "<body> "+
-                          	"<div align='center'> \n" +
-                          		"<input type=\"hidden\" id=\"custId\" name=\"custId\" value=\""+n.getIdPublicación()+"\">"+
-                          		"<a href=\""+n.getUrl()+"\">"+n.getTitulo()+"</a> <br>"+
-                          		"<a href=\"http://localhost:9090/Ingreso/Comentario\">Comentario</a> <br>"+
-                          		n.getFecha()+
-                          	"</div>"+
+                          "	<form action=\"Comentario2\">"+
+	                          	"<div align='center'> \n" +
+	                          		"<input type=\"hidden\" id=\"idPublicacion\" name=\"idPublicacion\" value=\""+n.getIdPublicación()+"\">"+
+	                          		"<input type=\"hidden\" id=\"titule\" name=\"titule\" value=\""+n.getTitulo()+"\">"+
+	                          		"<a href=\""+n.getUrl()+"\">"+n.getTitulo()+"</a> "+
+	                          		"<a href=\"http://localhost:9090/Ingreso/Noticia?titule="+n.getTitulo()+"&url="+n.getUrl()+"&custId="+n.getIdPublicación()+"\">Puntos: </a>"+
+	                          		"<p>"+n.getPuntos()+"</p><br>"+
+	                          		"<input type=\"submit\" value=\"submit\"> <br>"+
+	                          		n.getFecha()+
+	                          	"</div>"+
+                      		"</form>"+
                           "</body> \n" +
                         "</html>" 
-        			);
-        }
-        
+			);
+        }   
 	}
-
 }

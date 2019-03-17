@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class News {
 	
-	public String titulo, usuario, url,fecha;
-	public int puntos, idPublicación;	
-	public News(String titulo, String usuario, String url, int puntos, int idPublicación, String fecha) {
+	public String titulo, usuario, url,fecha, idPublicacion;
+	public int puntos;	
+	public News(String titulo, String usuario, String url, int puntos, String idPublicacion, String fecha) {
 		this.titulo = titulo;
 		this.usuario = usuario;
 		this.url = url;
 		this.puntos = puntos;
-		this.idPublicación = idPublicación;
+		this.idPublicacion = idPublicacion;
 		this.fecha = fecha;
 	}
 	public String getTitulo() {
@@ -38,11 +38,11 @@ public class News {
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
 	}
-	public int getIdPublicación() {
-		return idPublicación;
+	public String getIdPublicación() {
+		return idPublicacion;
 	}
-	public void setIdPublicación(int idPublicación) {
-		this.idPublicación = idPublicación;
+	public void setIdPublicación(String idPublicacion) {
+		this.idPublicacion = idPublicacion;
 	}
 	public String getFecha() {
 		return fecha;

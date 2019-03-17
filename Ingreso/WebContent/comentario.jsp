@@ -7,10 +7,13 @@
 <title>Comentario</title>
 </head>
 <body>
-        <form action="Noticia">
-            Title:  <input type="text" name="titule" size="20px"> <br>
-            Comentario:  <input type="text" name="url" size="20px"> <br><br>
+	<div align="center" style="margin-top: 50px;">
+        <form action="Comentario">
+            Title:  <input type="text" id="titule" name="titule" size="20px"> <br>
+            Comentario:  <input type="text" name="comentario" size="20px"> <br><br>
+            <input type="hidden" id="idNot" name="idNot">
         	<input type="submit" value="submit">      	
         </form>
+	</div>
 </body>
 </html>

@@ -2,11 +2,10 @@ package src;
 
 public class Comment {
 	
-	public String comentario;
-	public int idComentario;
-	public int idNoticia;
-	public Comment(String comentario, int idComentario, int idNoticia) {
+	public String comentario,tituloNoticia,idComentario,idNoticia;
+	public Comment(String comentario, String tituloNoticia, String idComentario, String idNoticia) {
 		this.comentario = comentario;
+		this.tituloNoticia = tituloNoticia;
 		this.idComentario = idComentario;
 		this.idNoticia = idNoticia;
 	}
@@ -16,17 +15,22 @@ public class Comment {
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
 	}
-	public int getIdComentario() {
+	public String getTituloNoticia() {
+		return tituloNoticia;
+	}
+	public void setTituloNoticia(String tituloNoticia) {
+		this.tituloNoticia = tituloNoticia;
+	}
+	public String getIdComentario() {
 		return idComentario;
 	}
-	public void setIdComentario(int idComentario) {
+	public void setIdComentario(String idComentario) {
 		this.idComentario = idComentario;
 	}
-	public int getIdNoticia() {
+	public String getIdNoticia() {
 		return idNoticia;
 	}
-	public void setIdNoticia(int idNoticia) {
+	public void setIdNoticia(String idNoticia) {
 		this.idNoticia = idNoticia;
-	}
-	
+	}	
 }
